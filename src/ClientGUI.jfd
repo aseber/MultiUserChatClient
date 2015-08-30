@@ -1,0 +1,95 @@
+JFDML JFormDesigner: "5.1.0.0.51" Java: "1.7.0_04" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
+			"$columnSpecs": "5px, 150px, 5px, 354px, 5px, 75px, 5px"
+			"$rowSpecs": "27px, 339px, 5px, 25px, 5px"
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+				name: "menuBar"
+				"maximumSize": new java.awt.Dimension( 32769, 21 )
+				"minimumSize": new java.awt.Dimension( 142, 21 )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "connectionsMenu"
+					"text": "Connections"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "connectToServerMenuItem"
+						"text": "Connect to server"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "connectToServerMenuItemActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "disconnectFromServerMenuItem"
+						"text": "Disconnect from current"
+						"enabled": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "disconnectFromServerMenuItemActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "quitMenuItem"
+						"text": "Quit"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "quitMenuItemActionPerformed", true ) )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "bookmarksMenu"
+					"text": "Bookmarks"
+				} )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridWidth": 7
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "userListScrollPane"
+				add( new FormComponent( "javax.swing.JList" ) {
+					name: "userList"
+					"autoscrolls": false
+					addEvent( new FormEvent( "javax.swing.event.ListSelectionListener", "valueChanged", "userListValueChanged", true ) )
+				} )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 2
+				"gridY": 2
+				"vAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "chatWindowScrollPane"
+				add( new FormComponent( "javax.swing.JTextPane" ) {
+					name: "chatWindow"
+					"editable": false
+				} )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 4
+				"gridY": 2
+				"gridWidth": 3
+				"vAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "messageInput"
+				"text": "Type message here..."
+				"foreground": new java.awt.Color( 125, 125, 125, 255 )
+				"enabled": false
+				"minimumSize": new java.awt.Dimension( 6, 25 )
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "messageInputFocusGained", true ) )
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "messageInputFocusLost", true ) )
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyTyped", "messageInputKeyTyped", true ) )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 2
+				"gridY": 4
+				"gridWidth": 3
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "sendButton"
+				"text": "Send"
+				"enabled": false
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "sendButtonMouseClicked", true ) )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 6
+				"gridY": 4
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 600, 400 )
+		} )
+	}
+}

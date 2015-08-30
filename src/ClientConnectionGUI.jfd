@@ -1,0 +1,95 @@
+JFDML JFormDesigner: "5.1.0.0.51" Java: "1.7.0_05" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			"title": "Connect to a server"
+			"resizable": false
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "clientConnectionGUI"
+				"border": sfield com.jgoodies.forms.factories.Borders DIALOG_BORDER
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
+					"$columnSpecs": "135dlu, labelcompgap, 106dlu"
+					"$rowSpecs": "default, linegap, default, linegap, default"
+				} ) {
+					name: "contentPanel"
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "serverAddressTextField"
+						"border": new javax.swing.border.TitledBorder( null, "Server address", 4, 0, null, sfield java.awt.Color black )
+						"background": &Color0 new java.awt.Color( 240, 240, 240, 255 )
+						"cursor": &Cursor0 new java.awt.Cursor( 2 )
+					}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+						"gridWidth": 3
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "serverNameTextField"
+						"border": new javax.swing.border.TitledBorder( null, "Server name", 4, 0, null, sfield java.awt.Color black )
+						"background": new java.awt.Color( 240, 240, 240, 255 )
+						"cursor": #Cursor0
+						"action": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+						"gridY": 3
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "serverPortTextField"
+						"border": new javax.swing.border.TitledBorder( null, "Server port", 4, 0, null, sfield java.awt.Color black )
+						"background": #Color0
+						"cursor": #Cursor0
+					}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+						"gridY": 3
+						"gridX": 3
+					} )
+					add( new FormComponent( "javax.swing.JCheckBox" ) {
+						name: "saveServerInformationCheckButton"
+						"text": "Save server information"
+						"border": new javax.swing.border.LineBorder( new java.awt.Color( 0, 0, 0, 0 ), 2, false )
+					}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+						"gridX": 3
+						"gridY": 5
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "West"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
+					"$columnSpecs": "labelcompgap, 133dlu, labelcompgap, button, relgap, button"
+					"$rowSpecs": "pref"
+				} ) {
+					name: "buttonBar"
+					"border": sfield com.jgoodies.forms.factories.Borders BUTTON_BAR_GAP_BORDER
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "notificationTextField"
+						"border": new javax.swing.border.LineBorder( new java.awt.Color( 0, 0, 0, 0 ), 2, false )
+						"background": new java.awt.Color( 240, 240, 240, 255 )
+						"editable": false
+					}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+						"gridX": 2
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "connectButton"
+						"text": "Connect"
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "connectButtonMouseClicked", true ) )
+					}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+						"gridX": 4
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "cancelButton"
+						"text": "Cancel"
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "cancelButtonMouseClicked", true ) )
+					}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+						"gridX": 6
+						"gridY": 1
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "South"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 200 )
+		} )
+	}
+}
